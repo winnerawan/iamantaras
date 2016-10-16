@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Iamantaras</string>
+    <string name="app_name_caps">IAMANTARAS</string>
+    <string name="masuk">Masuk</string>
+    <string name="lupapassword">Lupa password?</string>
+    <string name="belumpunyaakun">Belum punya akun?</string>
+    <string name="daftarsekarang">Daftar sekarang</string>
+    <string name="daftar">Daftar</string>
+    <string name="mungkinkenal">Mungkin Anda Kenal</string>
+    <string name="welcome_message">Selamat datang IAMANTARAS\nuntuk memulai silahkan update profil Anda</string>
+</resources>
