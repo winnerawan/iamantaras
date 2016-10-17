@@ -6,5 +6,5 @@ package com.mantambakberas.iamantaras.config;
 
 public class AppConfig {
 
-    public static final String BASE_API_URL = "http://128.199.210.113";
+    public static final String BASE_API_URL = "http://192.168.43.131";
 }

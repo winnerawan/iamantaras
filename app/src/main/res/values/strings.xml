@@ -7,5 +7,15 @@
     <string name="daftarsekarang">Daftar sekarang</string>
     <string name="daftar">Daftar</string>
     <string name="mungkinkenal">Mungkin Anda Kenal</string>
+    <string name="beranda">Beranda</string>
+    <string name="update_prof">Update Profile</string>
+    <string name="share">Share</string>
     <string name="welcome_message">Selamat datang IAMANTARAS\nuntuk memulai silahkan update profil Anda</string>
+    <string name="teman">Teman</string>
+    <string name="agenda">Agenda</string>
+    <string name="forum">Forum</string>
+    <string name="publikasi">Publikasi</string>
+    <string name="pengaturan">Pengaturan</string>
+    <string name="logout">Keluar</string>
+    <string name="iamantarab">IAMANTARAB</string>
 </resources>

@@ -8,4 +8,8 @@
     <color name="color_preloader_start">#000000</color>
     <color name="color_preloader_center">#000000</color>
     <color name="color_preloader_end">#ff56a9c7</color>
+    <color name="background_line">#444a59</color>
+    <color name="btcolorbg">#C5C7CC</color>
+    <color name="colotextmain">#979797</color>
+    <color name="colortexthighlight">#0083AE</color>
 </resources>
