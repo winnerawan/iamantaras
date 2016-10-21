@@ -20,7 +20,7 @@ Test Address: http://xxxx.xxx.xxx.xxx/ (update later)
 * `username`
 * `password`
 * `jenis_kelamin`
-* `angkatan_lulus
+* `angakatan_lulus`
 * `jururusan_id`
 * `asrama_id`
 
