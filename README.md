@@ -2,8 +2,6 @@
 #Ikatan Alumni Man Tambak Beras
 
 iamantaras REST API
-
-This is a small module that adds the ability to remotely work with the Magento via the REST API
 ## Installation
 
 ### Requqirements
