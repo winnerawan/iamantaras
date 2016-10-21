@@ -2,6 +2,7 @@ package com.mantambakberas.iamantaras.config;
 
 import com.mantambakberas.iamantaras.response.ApiResponse;
 import com.mantambakberas.iamantaras.response.LoginResponse;
+import com.mantambakberas.iamantaras.response.MyInfoResponse;
 import com.mantambakberas.iamantaras.response.UsersResponse;
 
 import retrofit.Callback;
@@ -17,13 +18,17 @@ import retrofit.http.POST;
 public interface ApiInterface {
 
     @FormUrlEncoded
-    @POST("/task_manager/v1/index.php/register")
-    void register(@Field("name") String name, @Field("email") String email, @Field("password") String password, Callback<ApiResponse> cb);
+    @POST("/api/v1/register")
+    void register(@Field("name") String name, @Field("email") String email, @Field("password")
+            String password, Callback<ApiResponse> cb);
 
     @FormUrlEncoded
-    @POST("/task_manager/v1/index.php/login")
+    @POST("/api/v1/login")
     void login(@Field("email") String email, @Field("password") String password, Callback<LoginResponse> cb);
 
-    @GET("/task_manager/v1/index.php/listUsers")
+    @GET("/api/v1/listUsers")
     void getlistusers(Callback<UsersResponse> cb);
+
+    @GET("/api/v1/myInformation")
+    void getmyinfo(Callback<MyInfoResponse> cb);
 }

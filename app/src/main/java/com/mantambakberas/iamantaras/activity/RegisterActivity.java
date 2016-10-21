@@ -93,7 +93,6 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), message_error, Toast.LENGTH_LONG).show();
                 }
             }
-
             @Override
             public void failure(RetrofitError error) {
                 Log.e(TAG, error.toString());

@@ -1,0 +1,12 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/navheader_height"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    android:padding="@dimen/md_keylines">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:src="@drawable/background"
+        android:layout_height="wrap_content" />
+</LinearLayout>

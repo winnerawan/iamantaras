@@ -6,5 +6,6 @@ package com.mantambakberas.iamantaras.config;
 
 public class AppConfig {
 
-    public static final String BASE_API_URL = "http://192.168.43.131";
+    public static final String BASE_API_URL = "http://76.164.195.171";
+    public static final String DEFAULT_FOTO = "http://76.164.195.171/api/v1/default-foto.png";
 }

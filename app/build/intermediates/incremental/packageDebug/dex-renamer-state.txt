@@ -1,0 +1,7 @@
+#Fri Oct 21 14:15:26 WIB 2016
+base.0=/Users/winnerawan/AndroidStudioProjects/Iamantaras/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_c2deb9dbbdfdc49760871d55b65d9e0157da23fa
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/Users/winnerawan/AndroidStudioProjects/Iamantaras/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_5b4be07764a723b7b72b3d5fe479429ec954bfd5/classes.dex
+base.1=/Users/winnerawan/AndroidStudioProjects/Iamantaras/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_5b4be07764a723b7b72b3d5fe479429ec954bfd5
+file.0=/Users/winnerawan/AndroidStudioProjects/Iamantaras/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_c2deb9dbbdfdc49760871d55b65d9e0157da23fa/classes.dex

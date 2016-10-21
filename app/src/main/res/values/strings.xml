@@ -18,4 +18,9 @@
     <string name="pengaturan">Pengaturan</string>
     <string name="logout">Keluar</string>
     <string name="iamantarab">IAMANTARAB</string>
+    <string name="cariteman">Terhubung dengan teman-teman Anda\nsilahkan cari teman Anda</string>
+    <string name="app_full_name_caps">IKATAN ALUMNI MAN TAMBAK BERAS</string>
+    <string name="profile">Profil</string>
+    <string name="usernotfriends">Pengguna yang belum menjadi teman Anda\ntidak dapat melihat data detail Anda</string>
+    <string name="profesi_null">Belum ada data profesi / pengalaman, silahkan\ntambahkan data Anda.</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.mantambakberas.iamantaras.activity;
 
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.support.design.widget.NavigationView;
@@ -16,18 +17,29 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
+import com.android.volley.toolbox.ImageLoader;
 import com.mantambakberas.iamantaras.R;
 import com.mantambakberas.iamantaras.adapter.ListUsersAdapter;
 import com.mantambakberas.iamantaras.config.ApiInterface;
 import com.mantambakberas.iamantaras.config.AppConfig;
+import com.mantambakberas.iamantaras.config.AppController;
+import com.mantambakberas.iamantaras.helper.CircledNetworkImageView;
 import com.mantambakberas.iamantaras.helper.SQLiteHandler;
+import com.mantambakberas.iamantaras.helper.SessionManager;
+import com.mantambakberas.iamantaras.model.MyInfo;
 import com.mantambakberas.iamantaras.model.Users;
+import com.mantambakberas.iamantaras.response.MyInfoResponse;
 import com.mantambakberas.iamantaras.response.UsersResponse;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import retrofit.Callback;
 import retrofit.RequestInterceptor;
 import retrofit.RestAdapter;
@@ -38,17 +50,31 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
+    ImageLoader imageLoader = AppController.getInstance().getImageLoader();
     private DrawerLayout mDrawerLayout;
     private SQLiteHandler db;
-    String api_key;
+    private SessionManager session;
+    public List<MyInfo> myInfo;
+    String api_key,name,email;
     List<Users> users;
     RecyclerView recyclerView;
+
+    // update & share
+    @Bind(R.id.share) TextView act_share;
+    @Bind(R.id.updateProfile) TextView act_profile;
+
+    //Navigation action
+    @Bind(R.id.name) TextView nameView;
+    @Bind(R.id.email) TextView emailView;
+    @Bind(R.id.foto) CircledNetworkImageView fotoView;
+
+    @Bind(R.id.logout) TextView act_logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        ButterKnife.bind(this);
         Toolbar toolbar = (Toolbar) findViewById(R.id.menuToolbar);
         setSupportActionBar(toolbar);
         ActionBar supportActionBar = getSupportActionBar();
@@ -65,13 +91,52 @@ public class MainActivity extends AppCompatActivity {
             recyclerView = (RecyclerView) findViewById(R.id.re_list_users);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+            session = new SessionManager(getApplicationContext());
             db = new SQLiteHandler(getApplicationContext());
+
+            if (!session.isLoggedIn()) {
+                logoutUser();
+            }
 
             HashMap<String, String> user = db.getUserDetails();
             api_key = user.get("api_key");
+            name = user.get("name");
+            email = user.get("email");
             Log.e(TAG, "api_key = "+api_key);
 
             getListAllUsers();
+            getMyInformation();
+            nameView.setText(name);
+            emailView.setText(email);
+
+            act_profile.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent prof = new Intent(MainActivity.this, ProfileActivity.class);
+                    startActivity(prof);
+                }
+            });
+
+            act_share.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent iShare = new Intent(Intent.ACTION_SEND);
+                    iShare.setType("text/plain");
+                    iShare.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.app_name_caps));
+                    String share = "\n"+getResources().getString(R.string.app_full_name_caps)+"\n";
+                    share = share + "https://play.google.com/store/apps/details?id=com.mantambakberas.iamantaras";
+                    iShare.putExtra(Intent.EXTRA_TEXT, share);
+                    startActivity(Intent.createChooser(iShare, "Share..."));
+                }
+            });
+
+            //action logout
+            act_logout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    logoutUser();
+                }
+            });
         }
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
@@ -163,6 +228,7 @@ public class MainActivity extends AppCompatActivity {
             public void success(UsersResponse usersResponse, Response response) {
                 users = usersResponse.getUsers();
                 recyclerView.setAdapter(new ListUsersAdapter(users, R.layout.list_users, getApplicationContext()));
+
             }
 
             @Override
@@ -171,4 +237,47 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void getMyInformation() {
+        RestAdapter restAdapter = new RestAdapter.Builder()
+                .setRequestInterceptor(new RequestInterceptor() {
+                    @Override
+                    public void intercept(RequestFacade request) {
+                        request.addHeader("Authorization", api_key);
+                        Log.e(TAG, request.toString());
+                    }
+                })
+                .setEndpoint(AppConfig.BASE_API_URL)
+                .build();
+        ApiInterface apiInterface = restAdapter.create(ApiInterface.class);
+        apiInterface.getmyinfo(new Callback<MyInfoResponse>() {
+            @Override
+            public void success(MyInfoResponse myInfoResponse, Response response) {
+                myInfo = myInfoResponse.getMyInfo();
+                String default_foto = AppConfig.BASE_API_URL+"/api/v1/default-foto.png";
+                if (myInfoResponse.getMyInfo().size()!=0) {
+                    String foto = myInfo.get(0).getFoto().toString();
+                    fotoView.setImageUrl(foto, imageLoader);
+                } else {
+                    fotoView.setImageUrl(default_foto, imageLoader);
+                }
+
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                Log.e(TAG, "ERR "+error.toString());
+            }
+        });
+    }
+    private void logoutUser() {
+        session.setLogin(false);
+        db.deleteUsers();
+        // kembali ke login activity
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+
 }

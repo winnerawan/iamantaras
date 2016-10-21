@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "/Users/winnerawan/AndroidStudioProjects/Iamantaras/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_mail_green.png",
+        "source": "/Users/winnerawan/AndroidStudioProjects/Iamantaras/app/src/main/res/drawable-xhdpi/ic_mail_green.png"
+    },
+    {
+        "merged": "/Users/winnerawan/AndroidStudioProjects/Iamantaras/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_user.png",
+        "source": "/Users/winnerawan/AndroidStudioProjects/Iamantaras/app/src/main/res/drawable-xhdpi/ic_user.png"
+    },
+    {
+        "merged": "/Users/winnerawan/AndroidStudioProjects/Iamantaras/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_mail.png",
+        "source": "/Users/winnerawan/AndroidStudioProjects/Iamantaras/app/src/main/res/drawable-xhdpi/ic_mail.png"
+    },
+    {
+        "merged": "/Users/winnerawan/AndroidStudioProjects/Iamantaras/app/build/intermediates/res/merged/debug/drawable-xhdpi/back.png",
+        "source": "/Users/winnerawan/AndroidStudioProjects/Iamantaras/app/src/main/res/drawable-xhdpi/back.png"
+    },
+    {
+        "merged": "/Users/winnerawan/AndroidStudioProjects/Iamantaras/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_password.png",
+        "source": "/Users/winnerawan/AndroidStudioProjects/Iamantaras/app/src/main/res/drawable-xhdpi/ic_password.png"
+    },
+    {
+        "merged": "/Users/winnerawan/AndroidStudioProjects/Iamantaras/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_password_green.png",
+        "source": "/Users/winnerawan/AndroidStudioProjects/Iamantaras/app/src/main/res/drawable-xhdpi/ic_password_green.png"
+    },
+    {
+        "merged": "/Users/winnerawan/AndroidStudioProjects/Iamantaras/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_action_ic_beranda.png",
+        "source": "/Users/winnerawan/AndroidStudioProjects/Iamantaras/app/src/main/res/drawable-xhdpi/ic_action_ic_beranda.png"
+    }
+]

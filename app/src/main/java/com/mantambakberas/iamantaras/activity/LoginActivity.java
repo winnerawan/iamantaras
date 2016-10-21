@@ -52,10 +52,11 @@ public class LoginActivity extends AppCompatActivity {
 
         if (session.isLoggedIn()) {
             // User sudah login, langsung ke main activity
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             finish();
         }
+
         TextView bRegister = (TextView) findViewById(R.id.register);
         bRegister.setOnClickListener(new View.OnClickListener() {
             @Override

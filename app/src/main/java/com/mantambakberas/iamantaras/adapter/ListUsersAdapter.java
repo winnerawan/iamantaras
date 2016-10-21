@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.mantambakberas.iamantaras.R;
+import com.mantambakberas.iamantaras.config.AppConfig;
 import com.mantambakberas.iamantaras.config.AppController;
 import com.mantambakberas.iamantaras.helper.CircledNetworkImageView;
 import com.mantambakberas.iamantaras.model.Users;
@@ -57,10 +58,18 @@ public class ListUsersAdapter extends RecyclerView.Adapter<ListUsersAdapter.User
 
     @Override
     public void onBindViewHolder(UsersViewHolder holder, int position) {
+        String default_foto = AppConfig.BASE_API_URL+"/api/v1/default-foto.png";
+        String default_jur = "";
         holder.nameView.setText(users.get(position).getName());
-        holder.fotoView.setImageUrl(users.get(position).getFoto(), imageLoader);
-        holder.jurusanView.setText(users.get(position).getJurusan()+" - "+users.get(position).getAngkatan());
-
+        if (users.get(position).getFoto()==null) {
+            holder.fotoView.setImageUrl(default_foto, imageLoader);
+        } else {
+            holder.fotoView.setImageUrl(users.get(position).getFoto(), imageLoader);
+        } if (users.get(position).getAngkatan()==null) {
+            holder.jurusanView.setText("");
+        } else {
+            holder.jurusanView.setText(users.get(position).getJurusan() + " - " + users.get(position).getAngkatan());
+        }
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         holder.usersLayout.setLayoutParams(params);
     }

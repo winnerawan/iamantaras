@@ -3,6 +3,8 @@ package com.mantambakberas.iamantaras.activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.mantambakberas.iamantaras.R;
+
 public class ListFriendActivity extends AppCompatActivity {
 
     @Override
