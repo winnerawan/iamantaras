@@ -14,4 +14,17 @@ This is a small module that adds the ability to remotely work with the Magento v
 Test Address: http://xxxx.xxx.xxx.xxx/ (update later)
 ## API
 ### User
-* [`Login`](https://github.com/winnerawan/iamantaras/users.md#login)
+* [`Register`](https://github.com/winnerawan/iamantaras/users.md#register)
+
+**`POST` `/api/v1/register`**
+**_Paramers_**
+* `name`
+* `username`
+* `password`
+* `jejenis_kelamin`
+* `angkatan_lulus
+* `jururusan_id`
+* `asrama_id`
+
+**_Examples_**
+---------------------------------------
