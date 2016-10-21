@@ -15,7 +15,7 @@ Test Address: http://xxxx.xxx.xxx.xxx/ (update later)
 * [`Register`](https://github.com/winnerawan/iamantaras/users.md#register)
 
 **`POST` `/api/v1/register`**
-**_Paramers_**
+**_Parameters_**
 * `name`
 * `username`
 * `password`
