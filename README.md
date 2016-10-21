@@ -10,7 +10,7 @@ This is a small module that adds the ability to remotely work with the Magento v
 
 # API Document
 ## Project Info
-Test Address: http://120.24.64.28/
+Test Address: http://xxxx.xxx.xxx.xxx/ (update later)
 ## API
 ### User
-* [`Login`](https://github.com/leoliew/magento-api/tree/master/api/en/customer.md#login)
+* [`Login`](https://github.com/winnerawan/users.md#login)
