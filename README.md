@@ -22,11 +22,17 @@ Test Address: http://xxx.xxx.xxx.xxx/ (update later)
 * `name`
 * `email`
 * `password`
+
+
+* [`Register`](https://github.com/winnerawan/iamantaras/users.md#registerInfo)
+
+**`POST` `/api/v1/registerInfo`**
+**_Parameters_**
+* `user_id`
 * `jenis_kelamin`
 * `angakatan_lulus`
 * `jururusan_id`
 * `asrama_id`
-
 
 * [`Login`](https://github.com/winnerawan/iamantaras/users.md#login)
 
