@@ -40,6 +40,7 @@ Test Address: http://xxx.xxx.xxx.xxx/ (update later)
 * [`Login`](https://github.com/winnerawan/iamantaras/users.md#login)
 
 **`POST` `/api/v1/login`**
+
 **_Parameters_**
 * `email`
 * `password`
@@ -59,6 +60,7 @@ Response
 `Karena API ini dibuat hanya untuk anggota alumni, maka hak untuk mengakses datanya dibatasi. Pada REST API ini digenerate secara random dan harus disimpan untuk digunakan pada header Authorization. `
 
 * [`Information User`](https://github.com/winnerawan/iamantaras/users.md#information)
+
 **`GET` `/api/v1/myInformation`**
 
 **_Header_**
