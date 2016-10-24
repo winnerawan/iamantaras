@@ -46,11 +46,14 @@ Response
     }
 ```
 -------------METHODS WITH AUTHENTICATION---------------
+
 `Karena API ini dibuat hanya untuk anggota alumni, maka hak untuk mengakses datanya dibatasi. Pada REST API ini digenerate secara random dan harus disimpan untuk digunakan pada header Authorization. `
 
 * [`Information User`](https://github.com/winnerawan/iamantaras/users.md#information)
 **`GET` `/api/v1/myInformation`**
+
 **_Header_**
+
 * `api_key`
 
 Response request tanpa header authorization
